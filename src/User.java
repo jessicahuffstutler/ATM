@@ -6,7 +6,6 @@ import java.util.Scanner;
  */
 public class User {
     String name;
-    String toDo;
     HashMap<String, Double> accounts = new HashMap();
 
     void chooseName() throws Exception {
@@ -37,6 +36,7 @@ public class User {
         String toDo = ATM.nextLine();
         if (toDo.equals("1")) {
             System.out.println("Your balance is " + balance);
+            chooseToDo();
         } else if (toDo.equals("2")) {
             System.out.println("How much money would you like to withdraw?");
             int amount = ATM.nextInt();
@@ -44,8 +44,10 @@ public class User {
                 System.out.println("Please enter an amount less than or equal to your current balance.");
             } else
                 System.out.println("Please take your cash.");
+                chooseToDo();
         } else if (toDo.equals("3")) {
             System.out.println("Account Removed.");
+            chooseToDo();
         } else if (toDo.equals("4")) {
             System.out.println("Thank you and please come again.");
             System.exit(0);
