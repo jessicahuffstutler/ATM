@@ -13,14 +13,14 @@ public class User {
         System.out.println("Welcome to your bank's ATM! What is your name?");
         name = ATM.nextLine();
         if (name.equals("")) {
-            System.out.println("Please enter a valid name."); //now shows a null pointer exception when used
+            System.out.println("Please enter a valid name.");
         } else if (!accounts.containsKey(name)) {
             System.out.println("We do not have an account on file for you. Would you like to create an account? [y/n]");
             String s = ATM.nextLine();
-            if (s.equals("y")) { //if there is no "if (s.equals("n"))" -> java.lang.NullPointerException
+            if (s.equals("y")) {
                 System.out.println("Creating account...");
                 accounts.put(name, 0.0);
-            } else if (s.equals("n")) { //now shows a null pointer exception when used
+            } else if (s.equals("n")) {
                 chooseName();
             }
         } else
