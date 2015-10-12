@@ -1,3 +1,4 @@
+import java.util.HashMap;
 import java.util.Scanner;
 
 /**
@@ -6,12 +7,14 @@ import java.util.Scanner;
 public class ATM {
     static User user;
 
-    public static void run() throws Exception {
+    public static void main(String[] args) throws Exception {
         user = new User();
 
+        HashMap<String, Double> accounts = new HashMap();
+
         while (true) {
-            user.chooseName();
-            user.chooseToDo();
+            user.chooseName(accounts);
+            user.chooseToDo(accounts);
         }
     }
 
